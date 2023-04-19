@@ -24,18 +24,36 @@
     </div>
     
     <script>
+      const getDeviceType = () => {
+        const ua = navigator.userAgent;
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+          return "tablet";
+        }
+        if (
+          /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+            ua
+          )
+        ) {
+          return "mobile";
+        }
+        return "desktop";
+      };
+      alert("device: " + getDeviceType);
+      
       const myInputs = document.getElementsByClassName("myInput");
       
-      myInputs.addEventListener("keydown", e => {
-        
-        let inputIndex = myInputs.indexOf(this);
-        let nextInput = myInputs[inputIndex+1];
-        
-        if (inputIndex < 3) {
-          nextInput.focus();
-          nextInput.select();
-        }
-      });
+      for (let i = 0; i < myInputs.length; i++) {
+        myInputs[i].addEventListener("keydown", e => {
+
+          let inputIndex = myInputs.indexOf(this.target);
+          let nextInput = myInputs[inputIndex+1];
+
+          if (inputIndex < 3) {
+            nextInput.focus();
+            nextInput.select();
+          }
+        });
+      }
     </script>
   </body>
   
