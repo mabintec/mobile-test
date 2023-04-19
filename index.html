@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simplest Input Test WebApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>div {font-family: sans-serif;}</style>
+  </head>
+  <body>
+    <h1>
+      The simplest input test webapp
+    </h1>
+    <div style="border:1px solid; padding: 5px; 10px; margin: 10px 0;">
+      <form action="/post" method="post">
+        Enter any text:
+        <input type="text" name="myInput">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <script>
+      const myInput = document.getElementById("myInput");
+      
+      myInput.addEventListener("keypress", function (e) {
+        
+        alert("keyCode: " + e.keyCode);
+      });
+    </script>
+  </body>
+</html>
