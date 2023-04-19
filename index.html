@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Simplest Input Test WebApp</title>
+    <title>Mobile Input Test</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>div {font-family: sans-serif;}</style>
   </head>
   <body>
     <h1>
-      The simplest input test webapp
+      Mobile Input Test
     </h1>
     <div style="border:1px solid; padding: 5px; 10px; margin: 10px 0;">
       <form action="/post" method="post">
@@ -20,7 +20,7 @@
     <script>
       const myInput = document.getElementById("myInput");
       
-      myInput.addEventListener("keypress", e => {
+      myInput.addEventListener("keydown", e => {
         
         alert("keyCode: " + e.keyCode);
       });
