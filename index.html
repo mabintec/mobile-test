@@ -24,7 +24,7 @@
     </div>
     
     <script>
-      const getDeviceType = () => {
+      function getDeviceType() {
         const ua = navigator.userAgent;
         if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
           return "tablet";
@@ -38,7 +38,7 @@
         }
         return "desktop";
       };
-      alert("device: " + getDeviceType);
+      alert("device: " + getDeviceType());
       
       const myInputs = document.getElementsByClassName("myInput");
       
