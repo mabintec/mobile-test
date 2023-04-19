@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <title>Mobile Input Test</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>div {font-family: sans-serif;}</style>
   </head>
+  
   <body>
     <h1>
       Mobile Input Test
     </h1>
+    
     <div style="border:1px solid; padding: 5px; 10px; margin: 10px 0;">
       <form action="/post" method="post">
         Enter any text:
-        <input type="text" id="myInput">
-        <input type="submit" value="Submit">
+        <input type="text" class="myInput"/>
+        <input type="text" class="myInput"/>
+        <input type="text" class="myInput"/>
+        <input type="text" class="myInput"/>
       </form>
     </div>
+    
     <script>
-      const myInput = document.getElementById("myInput");
+      const myInputs = document.getElementsByClassName("myInput");
       
-      myInput.addEventListener("keydown", e => {
+      myInputs.addEventListener("keydown", e => {
         
-        alert("keyCode: " + e.key);
+        let inputIndex = myInputs.indexOf(this);
+        let nextInput = myInputs[inputIndex+1];
+        
+        if (inputIndex < 3) {
+          nextInput.focus();
+          nextInput.select();
+        }
       });
     </script>
   </body>
+  
 </html>
