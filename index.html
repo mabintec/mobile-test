@@ -24,36 +24,24 @@
     </div>
     
     <script>
-      function getDeviceType() {
-        const ua = navigator.userAgent;
-        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-          return "tablet";
-        }
-        if (
-          /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-            ua
-          )
-        ) {
-          return "mobile";
-        }
-        return "desktop";
-      };
-      alert("device: " + getDeviceType());
-      
-      const myInputs = document.getElementsByClassName("myInput");
-      
-      for (let i = 0; i < myInputs.length; i++) {
-        myInputs[i].addEventListener("keydown", e => {
+      window.addEventListener('popstate', function(event) {
+        // The popstate event is fired each time when the current history entry changes.
 
-          let inputIndex = myInputs.indexOf(this.target);
-          let nextInput = myInputs[inputIndex+1];
+        var r = confirm("You pressed a Back button! Are you sure?!");
 
-          if (inputIndex < 3) {
-            nextInput.focus();
-            nextInput.select();
-          }
-        });
-      }
+        if (r == true) {
+            // Call Back button programmatically as per user confirmation.
+            history.back();
+            // Uncomment below line to redirect to the previous page instead.
+            // window.location = document.referrer // Note: IE11 is not supporting this.
+        } else {
+            // Stay on the current page.
+            history.pushState(null, null, window.location.pathname);
+        }
+
+        history.pushState(null, null, window.location.pathname);
+
+      }, false);
     </script>
   </body>
   
