@@ -24,9 +24,12 @@
     </div>
     
     <script>
-      window.addEventListener("hashchange", function(e) {
-        alert("jelouda");
-      })
+      function locationHashChanged() {
+        if (location.hash === "#cool-feature") {
+          console.log("You're visiting a cool feature!");
+        }
+      }
+      window.onhashchange = locationHashChanged;
     </script>
   </body>
   
