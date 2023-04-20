@@ -24,12 +24,9 @@
     </div>
     
     <script>
-      function locationHashChanged() {
-        
-          console.log("You're visiting a cool feature!");
-        
+      window.onbeforeunload = function () {
+        window.locatiom.href = "www.google.es";
       }
-      window.onhashchange = locationHashChanged;
     </script>
   </body>
   
