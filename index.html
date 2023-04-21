@@ -24,7 +24,7 @@
     </div>
     
     <script>
-      window.addEventListener("onbeforeunload", e => {
+      window.addEventListener("beforeunload", (e) => {
         console.log("Browser back button is clicked...");
         e.preventDefault();
         window.location.href = "www.caser.es";
