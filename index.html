@@ -8,7 +8,7 @@
     <style>div {font-family: sans-serif;}</style>
   </head>
   
-  <body>
+  <body onbeforeunload="backButtonEvent()">
     <h1>
       Mobile Input Test
     </h1>
@@ -24,8 +24,8 @@
     </div>
     
     <script>
-      window.onbeforeunload = function () {
-        window.location.href = "www.google.es";
+      function backButtonEvent() {
+        console.log("Browser back button is clicked...");
       }
     </script>
   </body>
