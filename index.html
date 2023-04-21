@@ -23,10 +23,13 @@
       </form>
     </div>
     
-    <script>
-      window.onbeforeunload = function(){
-        location.assign('http://www.caser.es');
-        return "go to caser instead?";
+    <script type="text/javascript">
+      window.onbeforeunload = function () {
+        window.setTimeout(function () {
+            window.location = 'https://www.aspsnippets.com/';
+        }, 3000);
+        window.onbeforeunload = null;
+        return '';
       }
     </script>
   </body>
